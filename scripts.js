@@ -48,7 +48,7 @@ btnIgual.addEventListener("click", () => {
 // }
 
 for(let btn of btnBotoes){
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", () => {               /** Professor mostrou outra forma tbm*/
         adicionaNumero(calculadora, btn.innerText);
      });
 }
