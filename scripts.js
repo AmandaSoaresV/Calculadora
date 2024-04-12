@@ -115,12 +115,22 @@ function executaCalculo(calculadora) {
   const calculo = calculadora.operandoAnterior + operador + calculadora.operandoAtual;
   
   const resultado = eval(calculo);
+  calculadora.bufferTextoElemento.innerText =
+  calculadora.operandoAnterior +
 
+  calculadora.operandoAtual +
+  "=";
+calculadora.displayTextoElemento.innerText = resultado;
+calculadora.operandoAtual = resultado;
  
 }       /* Aqui vai pegar o anteror vezes a operaçao q escolher
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
  */
-function apagaDigito(calculadora) {}         /* -1 por que seria a ultia pos*/
+function apagaDigito(calculadora) {
+  calculadora.displayTextoElemento.innerText =
+    calculadora.displayTextoElemento.innerText.slice(0, -1);
+}        
+ /* -1 por que seria a ultia pos*/
 
