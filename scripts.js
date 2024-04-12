@@ -72,7 +72,7 @@ function atualizaDisplay(calculadora, valor) {
  * Para atualizar o dispay, chame a função responsável por isso.
  */
 function limpaVariaveis(calculadora) {
-  //vai limpar os botoes  //
+     //vai limpar os botoes  //
   calculadora.operandoAnterior = "";
   calculadora.operandoAtual = "";
   calculadora.operador = "";
@@ -139,3 +139,4 @@ function apagaDigito(calculadora) {
   calculadora.displayTextoElemento.innerText =
     calculadora.displayTextoElemento.innerText.slice(0, -1);
 } /* -1 por que seria a ultia pos*/
+/* slice= copia */
