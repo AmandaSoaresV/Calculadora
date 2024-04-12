@@ -108,7 +108,16 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {}       /* Aqui vai pegar o anteror vezes a operaçao q escolher
+function executaCalculo(calculadora) {
+  const operadoresCalculadora = ["+", "-", "*", "÷"];
+  const operadoresReais = ["+", "-", "*", "/"];
+  const operador = operadoresReais[operadoresCalculadora.indexOf(calculadora.operador)];
+  const calculo = calculadora.operandoAnterior + operador + calculadora.operandoAtual;
+  
+  const resultado = eval(calculo);
+
+ 
+}       /* Aqui vai pegar o anteror vezes a operaçao q escolher
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
