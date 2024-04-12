@@ -112,12 +112,12 @@ function executaCalculo(calculadora) {
   const operadoresCalculadora = ["+", "-", "*", "÷"];
   const operadoresReais = ["+", "-", "*", "/"];
   const operador = operadoresReais[operadoresCalculadora.indexOf(calculadora.operador)];
-  const calculo = calculadora.operandoAnterior + operador + calculadora.operandoAtual;
+  const calculo = calculadora.operandoAnterior + operadoresCalculadora + calculadora.operandoAtual;
   
   const resultado = eval(calculo);
   calculadora.bufferTextoElemento.innerText =
   calculadora.operandoAnterior +
-
+  calculadora.operador +
   calculadora.operandoAtual +
   "=";
 calculadora.displayTextoElemento.innerText = resultado;
