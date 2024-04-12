@@ -82,7 +82,7 @@ function limpaVariaveis(calculadora) {     //vai limpar os botoes  //
  * O dígito "." deve receber um tratamento especial
  */
 function adicionaNumero(calculadora, numero) {
-  if (numero === "." && calculadora.operandoAtual.includes(".")) return;           // verifica se o número é "." e se já existe um "." no operando atual
+  if (numero === "." && calculadora.operandoAtual.includes(".")) return;           // verifica se o número é "." e se já existe um "." no operando atual//
   calculadora.operandoAtual += numero;
   atualizaDisplay(calculadora);
 }
@@ -112,7 +112,7 @@ function executaCalculo(calculadora) {
   const operadoresCalculadora = ["+", "-", "*", "÷"];
   const operadoresReais = ["+", "-", "*", "/"];
   const operador = operadoresReais[operadoresCalculadora.indexOf(calculadora.operador)];
-  const calculo = calculadora.operandoAnterior + operadoresCalculadora + calculadora.operandoAtual;
+  const calculo = calculadora.operandoAnterior + operador + calculadora.operandoAtual;
   
   const resultado = eval(calculo);
   calculadora.bufferTextoElemento.innerText =
