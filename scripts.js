@@ -81,7 +81,11 @@ function limpaVariaveis(calculadora) {     //vai limpar os botoes  //
  * - Adiciona um dígito no atributo operandoAtual e atualiza o display
  * O dígito "." deve receber um tratamento especial
  */
-
+function adicionaNumero(calculadora, numero) {
+  if (numero === "." && calculadora.operandoAtual.includes(".")) return;           // verifica se o número é "." e se já existe um "." no operando atual
+  calculadora.operandoAtual += numero;
+  atualizaDisplay(calculadora);
+}
 
 /* Função chamada quando um botão de operador é pressionado
  * Essa função tem comportamentos diferentes dependendo do estado da calculadora.
