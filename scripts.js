@@ -95,7 +95,12 @@ function adicionaNumero(calculadora, numero) {
  * - armazenar o operador recebido por parâmetro no atributo operador do objeto calculadora.
  * - copiar operandoAtual para o operandoAnterior, deixando a calculadora preparada para receber o próximo número
  */
-function escolheOperador(calculadora, operador) {}
+function escolheOperador(calculadora, operador) {
+  calculadora.operador = operador;
+  calculadora.operandoAnterior = calculadora.operandoAtual;
+  calculadora.operandoAtual = "";
+  atualizaDisplay(calculadora);
+}
 
 /* A função recebe o objeto calculadora e executa o calculo
  * - Verificar a operação a ser executada
