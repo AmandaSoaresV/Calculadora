@@ -41,24 +41,7 @@ btnIgual.addEventListener("click", () => {
 
 // Botões dos números
 
-// for (let i =0; i < btnBotoes.length; i++){
-//     btnBotoes[i].addEventListener("click", () => {
-//         adicionaNumero(calculadora, btn.innerText);
-//       });
-// }
-
-for(let btn of btnBotoes){
-    btn.addEventListener("click", () => {               /** Professor mostrou outra forma tbm*/
-        adicionaNumero(calculadora, btn.innerText);
-     });
-}
-
 // Botões dos operadores
-for(let btn of btnOperacoes){
-    btn.addEventListener("click", () => {
-       escolheOperador(calculadora, btn.innerText);
-    });
-}
 
 /****************************************************************
  * Regras da aplicação
@@ -69,31 +52,19 @@ for(let btn of btnOperacoes){
  *  O elemento buffer é atulizado com o atributo operandoAnterior
  *  O elemento display é atualizado com o atributo operandoAtual
  */
-function atualizaDisplay(calculadora) {
-    calculadora.bufferTextoElemento.innerText = calculadora.operandoAnterior
-    calculadora.displayTextoElemento.innerText = calculadora.operandoAtual
-    
-}
+function atualizaDisplay(calculadora) {}
 
 /* Limpa os atributos do objeto calculadora e atualiza o display.
  * Para atualizar o dispay, chame a função responsável por isso.
  */
-function limpaVariaveis(calculadora) {
-    calculadora.operandoAnterior = ""
-    calculadora.operandoAtual = ''
-    calculadora.operador = ''
-    atualizaDisplay(calculadora)
-}
+function limpaVariaveis(calculadora) {}
 
 /* Função chamada quando um botão de número é pressionado
  * A função recebe o objeto calculadora e o número a ser exibido no display.
  * - Adiciona um dígito no atributo operandoAtual e atualiza o display
  * O dígito "." deve receber um tratamento especial
  */
-function adicionaNumero(calculadora, numero) {
-    calculadora.operandoAtual = calculadora.operandoAtual + numero
-    atualizaDisplay(calculadora)
-}
+function adicionaNumero(calculadora, numero) {}
 
 /* Função chamada quando um botão de operador é pressionado
  * Essa função tem comportamentos diferentes dependendo do estado da calculadora.
@@ -103,13 +74,7 @@ function adicionaNumero(calculadora, numero) {
  * - armazenar o operador recebido por parâmetro no atributo operador do objeto calculadora.
  * - copiar operandoAtual para o operandoAnterior, deixando a calculadora preparada para receber o próximo número
  */
-function escolheOperador(calculadora, operador) {
-    calculadora.operandoAnterior = calculadora.operandoAtual
-    calculadora.operandoAtual = ""
-    calculadora.operador = operador
-    atualizaDisplay(calculadora) 
-    
-}
+function escolheOperador(calculadora, operador) {}
 
 /* A função recebe o objeto calculadora e executa o calculo
  * - Verificar a operação a ser executada
@@ -117,12 +82,7 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {
-    let operador = calculadora.operador;
-    let operandoAnterior = parseFloat(calculadora.operadorAnterior);
-    let operandoAtual = parseFloat(calculadora.operandoAtual);
-    let resultado; 
-}
+function executaCalculo(calculadora) {}
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
