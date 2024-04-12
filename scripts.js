@@ -2,7 +2,7 @@
  * Seleção dos elementos HTML
  ****************************************************************/
 // Botões
-const btnBotoes = document.querySelectorAll("[btn-numero]");
+const btnBotoes = document.querySelectorAll("[btn-numero]");   //Selecona todos os elementos//
 const btnOperacoes = document.querySelectorAll("[btn-operador]"); //selecionando um operador com colchote//
 const btnIgual = document.querySelector("[btn-igual]");
 const btnDelete = document.querySelector("[btn-delete]");
@@ -14,8 +14,8 @@ const displayElemento = document.querySelector("[txt-display]");
 
 // Objeto que irá representar e armazenar os dados da calculadora
 const calculadora = {
-  operandoAnterior: "",
-  operandoAtual: "",
+  operandoAnterior: "",                                          //vai ficar salvo o nuemero anterior//
+  operandoAtual: "",                                             //o ultimo a ser digitado//
   operador: "",
   bufferTextoElemento: bufferElemento, // DIV buffer
   displayTextoElemento: displayElemento, // DIV display
@@ -61,19 +61,31 @@ btnOperacoes.forEach(btn => {
  *  O elemento buffer é atulizado com o atributo operandoAnterior
  *  O elemento display é atualizado com o atributo operandoAtual
  */
-function atualizaDisplay(calculadora) {}
+  function atualizaDisplay(calculadora) {
+    calculadora.bufferTextoElemento.innerText = calculadora.operandoAnterior;
+    calculadora.displayTextoElemento.innerText = calculadora.operandoAtual;
+}
 
 /* Limpa os atributos do objeto calculadora e atualiza o display.
  * Para atualizar o dispay, chame a função responsável por isso.
  */
-function limpaVariaveis(calculadora) {}
+function limpaVariaveis(calculadora) {     //vai limpar os botoes  //
+  calculadora.operandoAnterior = "";
+  calculadora.operandoAtual = "";
+  calculadora.operador = "";
+  atualizaDisplay(calculadora);
+}
 
 /* Função chamada quando um botão de número é pressionado
  * A função recebe o objeto calculadora e o número a ser exibido no display.
  * - Adiciona um dígito no atributo operandoAtual e atualiza o display
  * O dígito "." deve receber um tratamento especial
  */
-function adicionaNumero(calculadora, numero) {}
+function adicionaNumero(calculadora, numero) {
+  if (numero === "." && calculadora.operandoAtual.includes(".")) return;           // verifica se o número é "." e se já existe um "." no operando atual
+  calculadora.operandoAtual += numero;
+  atualizaDisplay(calculadora);
+}
 
 /* Função chamada quando um botão de operador é pressionado
  * Essa função tem comportamentos diferentes dependendo do estado da calculadora.
@@ -91,10 +103,10 @@ function escolheOperador(calculadora, operador) {}
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {}
+function executaCalculo(calculadora) {}       /* Aqui vai pegar o anteror vezes a operaçao q escolher
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
  */
-function apagaDigito(calculadora) {}
+function apagaDigito(calculadora) {}         /* -1 por que seria a ultia pos*/
 
