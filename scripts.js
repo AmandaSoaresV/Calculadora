@@ -3,7 +3,7 @@
  ****************************************************************/
 // Botões
 const btnBotoes = document.querySelectorAll("[btn-numero]");
-const btnOperacoes = document.querySelectorAll("[btn-operador]");
+const btnOperacoes = document.querySelectorAll("[btn-operador]"); //selecionando um operador com colchote//
 const btnIgual = document.querySelector("[btn-igual]");
 const btnDelete = document.querySelector("[btn-delete]");
 const btnAC = document.querySelector("[btn-ac]");
@@ -40,9 +40,18 @@ btnIgual.addEventListener("click", () => {
 });
 
 // Botões dos números
+btnBotoes.forEach(btn => {
+  btn.addEventListener("click", () => {
+    adicionaNumero(calculadora, btn.innerText);
+  });
+});
 
 // Botões dos operadores
-
+btnOperacoes.forEach(btn => {
+  btn.addEventListener("click", () => {
+    escolheOperador(calculadora, btn.innerText);
+  });
+});
 /****************************************************************
  * Regras da aplicação
  ****************************************************************/
@@ -88,3 +97,4 @@ function executaCalculo(calculadora) {}
  * Apaga o último dígito digitado no
  */
 function apagaDigito(calculadora) {}
+
